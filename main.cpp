@@ -41,12 +41,12 @@ void printBuildings(int* buildings, int buildingsNum, char* buildingsColorScheme
 		cout << buildingsColorScheme[1];
 	}
 	cout << endl;
-	for (int i = height; i > 0; i--)
+	for (int i = height; i > 0; i--)//'i' is current height (starting from top == 'height')
 	{
 		int lightReduce = 0;
 		for (int j = 0; j < buildingsNum; j++)
 		{
-			if (buildings[j] - i < 0)
+			if (buildings[j] - i < 0)//empty space
 			{
 				if (lightReduce > 1)
 				{
@@ -61,7 +61,7 @@ void printBuildings(int* buildings, int buildingsNum, char* buildingsColorScheme
 					lightReduce--;
 				}
 			}
-			else
+			else//building
 			{
 				if (lightReduce == 0 && j > 0)
 				{
